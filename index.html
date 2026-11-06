@@ -1,107 +1,144 @@
 ---
 layout: default
-title: Blurbs — A little goes a long way
-description: Make room for the words that say a lot. Meet Blurbs, a thoughtful home for short-form writing.
+title: Blurbs. Big opinions, few words.
+description: Short reviews of what you read, play and watch. No stars, no scores, just a few good words.
 ---
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Blurbs home">
-      <span class="wordmark-icon" aria-hidden="true">b.</span>
-      <span>blurbs</span>
-    </a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#about">The idea</a>
-      <a href="#inspiration">Get inspired</a>
-      <a class="nav-cta" href="#get-started">Find your words <span aria-hidden="true">↗</span></a>
-    </nav>
+<header class="sheet masthead">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Blurbs home">Blurbs<span>.</span></a>
+    <a href="#how">How it works</a>
+    <a href="#try">Try it</a>
+    <a href="#read">Read a few</a>
+  </nav>
+  <div class="dateline rail">
+    <span>Books · Music · Film</span>
+    <time class="js-dateline"></time>
+    <span>Fifty words at most</span>
   </div>
 </header>
 
 <main>
-  <section class="hero container">
+  <section class="sheet hero">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE SPACE FOR A LOT OF THOUGHT</p>
-      <h1>Small words.<br><span>Big feeling.</span></h1>
-      <p class="hero-description">A good blurb can make you stop, smile, or see something in a new way. Make room for the words worth keeping.</p>
-      <a class="button button-dark" href="#about">Come on in <span aria-hidden="true">↗</span></a>
-      <div class="hero-note">
-        <div class="note-avatars" aria-hidden="true"><span>J</span><span>M</span><span>A</span></div>
-        <p>For curious minds<br><strong>and thoughtful words.</strong></p>
-      </div>
+      <h1 class="plates">
+        <span class="paper">Blurbs<span class="stop">.</span></span>
+        <span class="plate plate-c" aria-hidden="true">Blurbs.</span>
+        <span class="plate plate-m" aria-hidden="true">Blurbs<span class="nil">.</span></span>
+        <span class="plate plate-y" aria-hidden="true">Blurbs<span class="nil">.</span></span>
+      </h1>
+      <p class="tagline">Big opinions. Few words.</p>
+      <p class="lede">Short reviews of what you read, play and watch. No stars, no scores, just a few good words.</p>
+      <p class="actions">
+        <a class="btn btn-primary" href="#try">Try writing one</a>
+        <a class="btn btn-secondary" href="#how">How it works</a>
+      </p>
     </div>
-    <div class="hero-art" aria-label="A colorful collection of short, thoughtful notes">
-      <div class="sunburst" aria-hidden="true"></div>
-      <div class="note note-back" aria-hidden="true"><span>01 — A NOTE TO SELF</span><strong>Take the<br>scenic route.</strong><i>✳</i></div>
-      <div class="note note-front"><span>02 — SOMETHING TO REMEMBER</span><strong>Somewhere,<br>someone is<br>having the best<br>day of their life.</strong><i aria-hidden="true">✳</i></div>
-      <span class="art-caption">A thought, made tangible.</span>
-      <span class="art-sparkle sparkle-one" aria-hidden="true">✳</span>
-      <span class="art-sparkle sparkle-two" aria-hidden="true">✳</span>
-    </div>
-  </section>
 
-  <section class="ticker" aria-label="Words to live by">
-    <div class="ticker-track" aria-hidden="true">
-      <span>Say a little more</span><i>✳</i><span>Keep what matters</span><i>✳</i><span>Make it memorable</span><i>✳</i><span>Say a little more</span><i>✳</i><span>Keep what matters</span><i>✳</i>
-    </div>
-  </section>
-
-  <section class="about section container" id="about">
-    <div class="section-label"><span>01</span> THE IDEA</div>
-    <div class="about-content">
-      <h2>Not everything meaningful needs a lot of words.</h2>
-      <p>There’s an art to getting to the heart of it. Blurbs is a little reminder to notice more, say it simply, and share the thoughts you don’t want to lose.</p>
-      <a class="text-link" href="#inspiration">A few ways to begin <span aria-hidden="true">↓</span></a>
-    </div>
-    <div class="about-mark" aria-hidden="true">b<span>.</span></div>
-  </section>
-
-  <section class="inspiration section" id="inspiration">
-    <div class="container">
-      <div class="inspiration-heading">
-        <div>
-          <div class="section-label"><span>02</span> A FEW STARTING POINTS</div>
-          <h2>Find your kind of <em>short story.</em></h2>
+    <figure class="phone" role="img" aria-label="The Blurbs feed on a phone: a trending strip of covers, then short reviews of a novel, an album and a film.">
+      <div class="screen">
+        <div class="feed-head">
+          <span class="rail js-dateline"></span>
+          <span class="feed-title">Blurbs<span>.</span></span>
         </div>
-        <p>Big idea or tiny detail, there’s no wrong place to start.</p>
+        <span class="rail feed-rail">Trending</span>
+        <div class="trending">
+          {% for b in site.data.blurbs %}
+          <div>
+            <span class="cover cover-{{ b.medium }}">{{ b.mono }}</span>
+            <span class="trending-name">{{ b.title }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="feed">
+          {% assign feed = site.data.blurbs | where: "phone", true %}
+          {% for b in feed %}{% include blurb.html b=b %}{% endfor %}
+        </div>
+        <div class="tabbar">
+          <div class="tabs">
+            <span class="on"><svg class="ph"><use href="#ph-house"/></svg></span>
+            <span><svg class="ph"><use href="#ph-magnifying-glass"/></svg></span>
+            <span><svg class="ph"><use href="#ph-user-circle"/></svg></span>
+          </div>
+          <span class="write"><svg class="ph"><use href="#ph-plus"/></svg></span>
+        </div>
       </div>
-      <div class="cards">
-        <article class="idea-card card-yellow">
-          <span class="card-number">01 / NOTICE</span>
-          <span class="card-symbol" aria-hidden="true">◎</span>
-          <h3>The little things</h3>
-          <p>A detail from today you might have missed if you weren’t paying attention.</p>
-          <span class="card-prompt">What made you pause?</span>
-        </article>
-        <article class="idea-card card-pink">
-          <span class="card-number">02 / REMEMBER</span>
-          <span class="card-symbol" aria-hidden="true">↝</span>
-          <h3>The almost forgotten</h3>
-          <p>A moment, a feeling, or a sentence you want to carry with you.</p>
-          <span class="card-prompt">What stayed with you?</span>
-        </article>
-        <article class="idea-card card-lilac">
-          <span class="card-number">03 / IMAGINE</span>
-          <span class="card-symbol" aria-hidden="true">✳</span>
-          <h3>The what-ifs</h3>
-          <p>A question with no answer yet. A thought with room to wander.</p>
-          <span class="card-prompt">Where did your mind go?</span>
-        </article>
+    </figure>
+  </section>
+
+  <section class="sheet how" id="how">
+    <h2 class="statement">No stars. No scores.<br><em>Just a few good words.</em></h2>
+    <ol class="steps">
+      <li>
+        <span class="numeral plates" aria-hidden="true">
+          <span class="paper">1</span><span class="plate plate-c">1</span><span class="plate plate-m">1</span><span class="plate plate-y">1</span>
+        </span>
+        <h3>Find it</h3>
+        <p>Search books on Open Library, albums on Spotify and films on TMDB. Holding the book? Scan its barcode.</p>
+      </li>
+      <li>
+        <span class="numeral plates" aria-hidden="true">
+          <span class="paper">2</span><span class="plate plate-c">2</span><span class="plate plate-m">2</span><span class="plate plate-y">2</span>
+        </span>
+        <h3>Say it</h3>
+        <p>Fifty words at most. With nothing to rate, all that’s left is what you actually thought.</p>
+      </li>
+      <li>
+        <span class="numeral plates" aria-hidden="true">
+          <span class="paper">3</span><span class="plate plate-c">3</span><span class="plate plate-m">3</span><span class="plate plate-y">3</span>
+        </span>
+        <h3>Follow along</h3>
+        <p>Follow people whose taste you trust, and see what everyone’s been blurbing lately.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sheet try" id="try">
+    <div>
+      <p class="rail">Try it</p>
+      <h2>Fifty words is less than you think.</h2>
+      <p class="muted">And more than you need. This is only a practice sheet: nothing you write here leaves the page.</p>
+    </div>
+    <div class="compose">
+      <textarea id="draft" rows="6" aria-label="Your blurb" aria-describedby="count" placeholder="What stayed with you? Fifty words, no stars."></textarea>
+      <div class="meter">
+        <span id="count">0 / 50 words</span>
+        <span class="bar"><span id="bar"></span></span>
       </div>
+      <p class="visually-hidden" id="limit" role="status"></p>
     </div>
   </section>
 
-  <section class="closing container" id="get-started">
-    <div class="closing-star" aria-hidden="true">✳</div>
-    <p class="eyebrow">YOUR WORDS, YOUR WAY</p>
-    <h2>Start with a thought.<br><em>See where it takes you.</em></h2>
-    <a class="button button-light" href="#about">Explore the idea <span aria-hidden="true">↑</span></a>
-    <span class="closing-doodle" aria-hidden="true">b.</span>
+  <section class="sheet read" id="read">
+    <p class="rail">Sample blurbs, written for show</p>
+    <h2>Read a few.</h2>
+    <div class="columns">
+      {% assign mediums = "book:book-open:Books,music:vinyl-record:Music,movie:film-slate:Film" | split: "," %}
+      {% for m in mediums %}
+      {% assign parts = m | split: ":" %}
+      <div class="column">
+        <h3 class="rail column-head"><svg class="ph" aria-hidden="true"><use href="#ph-{{ parts[1] }}"/></svg>{{ parts[2] }}</h3>
+        {% assign group = site.data.blurbs | where: "medium", parts[0] %}
+        {% for b in group %}{% include blurb.html b=b %}{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="sheet closing" id="get">
+    <h2>Your first blurb is <em>fifty words away.</em></h2>
+    {% if site.app_store_url != "" or site.play_store_url != "" %}
+    <p class="actions">
+      {% if site.app_store_url != "" %}<a class="btn btn-primary" href="{{ site.app_store_url }}"><svg class="ph" aria-hidden="true"><use href="#ph-apple-logo"/></svg>App Store</a>{% endif %}
+      {% if site.play_store_url != "" %}<a class="btn btn-primary" href="{{ site.play_store_url }}"><svg class="ph" aria-hidden="true"><use href="#ph-google-play-logo"/></svg>Google Play</a>{% endif %}
+    </p>
+    {% else %}
+    <p class="rail">Coming soon to iOS and Android</p>
+    {% endif %}
   </section>
 </main>
 
-<footer class="site-footer container">
-  <a class="wordmark" href="{{ '/' | relative_url }}"><span class="wordmark-icon" aria-hidden="true">b.</span><span>blurbs</span></a>
-  <p>A little space for a lot of thought.</p>
-  <span>Made for the love of words <span aria-hidden="true">✳</span></span>
+<footer class="sheet footer">
+  <span class="brand">Blurbs<span>.</span></span>
+  <em>Big opinions. Few words.</em>
 </footer>

@@ -1,0 +1,21 @@
+<article class="blurb">
+  <div class="blurb-author">
+    <span class="avatar tint-{{ include.b.tint }}" aria-hidden="true">{{ include.b.initials }}</span>
+    <strong>{{ include.b.author }}</strong>
+    <span class="muted">{{ include.b.time }}</span>
+  </div>
+  <div class="title-line">
+    <span class="cover cover-{{ include.b.medium }}" aria-hidden="true">{{ include.b.mono }}</span>
+    <div>
+      <span class="kicker">{{ include.b.kicker }}</span>
+      <span class="title-name">{{ include.b.title }}</span>
+      <span class="byline">{{ include.b.byline }}</span>
+    </div>
+  </div>
+  <p>{{ include.b.body }}</p>
+  <div class="blurb-actions" aria-hidden="true">
+    <span class="likes"><svg class="ph"><use href="#ph-heart"/></svg>{{ include.b.likes }}</span>
+    <svg class="ph"><use href="#ph-share-network"/></svg>
+    <svg class="ph"><use href="#ph-dots-three"/></svg>
+  </div>
+</article>

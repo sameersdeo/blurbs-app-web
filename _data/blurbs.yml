@@ -1,0 +1,76 @@
+# Sample blurbs, from the app's seed data (supabase/migrations/0005_seed_blurbs.sql).
+# The covers are the app's own monogram placeholders, so no cover art is needed.
+- medium: book
+  kicker: Book · Open Library
+  title: The Name of the Wind
+  byline: Patrick Rothfuss · 2007
+  mono: N
+  author: Chloe Martins
+  initials: CM
+  tint: magenta
+  time: 1d
+  likes: 14
+  phone: true
+  body: Kvothe is insufferable and I could not put it down anyway.
+
+- medium: book
+  kicker: Book · Open Library
+  title: Dune
+  byline: Frank Herbert · 1965
+  mono: D
+  author: Alice Chen
+  initials: AC
+  tint: cyan
+  time: 2d
+  likes: 21
+  body: Reread this for the fourth time and it still holds up. The politics hit different as an adult.
+
+- medium: music
+  kicker: Album · Spotify
+  title: The Dark Side of the Moon
+  byline: Pink Floyd · 1973
+  mono: D
+  author: Ben Okafor
+  initials: BO
+  tint: deep
+  time: 3d
+  likes: 32
+  phone: true
+  body: Side one flows into side two like it was always one song. Vinyl is the only correct format.
+
+- medium: music
+  kicker: Album · Spotify
+  title: Random Access Memories
+  byline: Daft Punk · 2013
+  mono: R
+  author: Mina Suzuki
+  initials: MS
+  tint: rose
+  time: 4d
+  likes: 9
+  body: Give Life Back to Music opens this perfectly. Still their best front-to-back album.
+
+- medium: movie
+  kicker: Film · TMDB
+  title: Spirited Away
+  byline: Hayao Miyazaki · 2001
+  mono: S
+  author: Chloe Martins
+  initials: CM
+  tint: magenta
+  time: 1d
+  likes: 27
+  phone: true
+  body: No Face lives in my head rent free. Rewatched this with my niece and it hit just as hard.
+
+- medium: movie
+  kicker: Film · TMDB
+  title: Parasite
+  byline: Bong Joon-ho · 2019
+  mono: P
+  author: Alice Chen
+  initials: AC
+  tint: cyan
+  time: 3d
+  likes: 18
+  body: That third act tonal shift is one of the best in modern film. Deserved every award.

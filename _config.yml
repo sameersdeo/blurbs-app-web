@@ -1,6 +1,11 @@
 title: Blurbs
-description: A little space for the words that say a lot.
+description: Short reviews of what you read, play and watch. No stars, no scores, just a few good words.
 url: ""
 baseurl: ""
 markdown: kramdown
 permalink: pretty
+
+# Store listings. While both are empty the page says "Coming soon to iOS and
+# Android"; fill one in and its button appears instead.
+app_store_url: ""
+play_store_url: ""
