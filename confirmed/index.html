@@ -1,0 +1,65 @@
+---
+layout: default
+title: Email confirmed · Blurbs
+description: Your Blurbs account is ready.
+private: true
+---
+
+<!--
+  Where the "Confirm my email" link lands once Supabase has verified the address.
+  This URL must be in Supabase's Redirect URLs and in the app's
+  EXPO_PUBLIC_CONFIRM_URL (see SETUP.md in the app repo).
+
+  Supabase appends the result to the URL: a session in the #fragment on success,
+  error details in the fragment or query on failure. The script only checks for an
+  error, then wipes them from the address bar. Nothing is stored or sent anywhere.
+-->
+
+<header class="sheet masthead">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Blurbs home">Blurbs<span>.</span></a>
+  </nav>
+  <div class="dateline rail">
+    <span>Books · Music · Film</span>
+    <span>Fifty words at most</span>
+  </div>
+</header>
+
+<main class="sheet confirm">
+  <section id="confirm-ok">
+    <svg class="ph confirm-icon" aria-hidden="true"><use href="#ph-check-circle"/></svg>
+    <h1>You’re confirmed.</h1>
+    <p>Your email is verified and your account is ready. Head back to the app and log in to write your first blurb.</p>
+    <p class="actions"><a class="btn btn-primary" href="io.supabase.blurbs://">Open Blurbs</a></p>
+    <p class="note">On a computer? Open the app on your phone and log in there.</p>
+  </section>
+
+  <section id="confirm-fail" class="confirm-fail" hidden>
+    <svg class="ph confirm-icon" aria-hidden="true"><use href="#ph-warning-circle"/></svg>
+    <h1>That link didn’t work.</h1>
+    <p>It may have expired or already been used.</p>
+    <p class="actions"><a class="btn btn-primary" href="io.supabase.blurbs://">Open Blurbs</a></p>
+    <p class="note">If you’ve confirmed already, just log in. Otherwise, sign up again in the app and we’ll send a fresh link.</p>
+  </section>
+</main>
+
+<footer class="sheet footer">
+  <span class="brand">Blurbs<span>.</span></span>
+  <em>Big opinions. Few words.</em>
+</footer>
+
+<script>
+  (function () {
+    var hash = new URLSearchParams(location.hash.slice(1));
+    var query = new URLSearchParams(location.search);
+
+    if (hash.get('error') || query.get('error') || hash.get('error_code') || query.get('error_code')) {
+      document.getElementById('confirm-ok').hidden = true;
+      document.getElementById('confirm-fail').hidden = false;
+      document.title = 'Link expired · Blurbs';
+    }
+
+    // Don't leave session tokens or codes in the address bar or history.
+    if (location.hash || location.search) history.replaceState(null, '', location.pathname);
+  })();
+</script>

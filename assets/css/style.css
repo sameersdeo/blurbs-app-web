@@ -207,6 +207,7 @@ section { scroll-margin-top: var(--space-6); }
 }
 
 .brand span,
+.logo span,
 .feed-title span { color: var(--color-accent); }
 
 /* The one place rules print: the thick-thin head pair around the dateline. */
@@ -232,7 +233,7 @@ section { scroll-margin-top: var(--space-6); }
 
 .hero-copy { padding-top: var(--space-8); }
 
-h1.plates {
+h1.logo {
   font-size: clamp(120px, 15.5vw, 190px);
   font-weight: 600;
   line-height: 1;
@@ -316,12 +317,9 @@ h1.plates {
   translate: calc(var(--spread, 0.018em) * -0.86 + 0.009em * var(--press-nx, 0)) calc(var(--spread, 0.018em) * -0.64 + 0.006em * var(--press-ny, 0));
 }
 
-.nil { visibility: hidden; }
-
 @media (prefers-color-scheme: dark), (forced-colors: active) {
   .plate { display: none; }
   .plates .paper { color: var(--color-text); }
-  .plates .stop { color: var(--color-accent); }
 }
 
 /* — the phone: the app's feed, drawn in the same tokens — */
@@ -706,6 +704,46 @@ h1.plates {
 
 .footer .brand { color: var(--color-text); }
 
+/* — the email confirmation page — */
+
+.confirm {
+  min-height: 55vh;
+  padding-block: calc(var(--space-8) * 2) var(--section);
+}
+
+.confirm [hidden] { display: none; }
+
+.confirm-icon {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+  font-size: 56px;
+}
+
+.confirm-fail .confirm-icon { color: var(--color-accent-2); }
+
+.confirm h1 {
+  max-width: 12em;
+  margin-bottom: var(--space-4);
+  font-size: clamp(44px, 7.5vw, 88px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.confirm p {
+  max-width: 30em;
+  color: var(--color-neutral-700);
+  font-size: 19px;
+}
+
+.confirm .actions { margin-top: var(--space-6); }
+
+.confirm .note {
+  margin-top: var(--space-4);
+  font-size: 15px;
+}
+
 /* — narrower sheets — */
 
 @media (max-width: 1000px) {
@@ -716,7 +754,7 @@ h1.plates {
     gap: calc(var(--space-8) * 1.5);
   }
 
-  h1.plates { font-size: clamp(76px, 23vw, 200px); }
+  h1.logo { font-size: clamp(76px, 23vw, 200px); }
 
   .hero-copy { padding-top: var(--space-4); }
   .try { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
