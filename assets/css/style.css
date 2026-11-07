@@ -700,6 +700,9 @@ h1.logo {
 
 .footer .brand { color: var(--color-text); }
 
+.footer { flex-wrap: wrap; }
+.footer-links { display: flex; gap: var(--space-3); }
+
 /* — the email confirmation page — */
 
 .confirm {
@@ -739,6 +742,39 @@ h1.logo {
   margin-top: var(--space-4);
   font-size: 15px;
 }
+
+/* — terms and privacy — */
+
+.legal { padding-block: calc(var(--space-8) * 1.5) var(--section); }
+.legal > * { max-width: 44em; }
+
+.legal h1 {
+  margin-bottom: var(--space-2);
+  font-size: clamp(44px, 7.5vw, 88px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.legal .lede { margin-top: var(--space-6); }
+.legal section { margin-top: var(--space-8); }
+
+.legal h2 {
+  margin-bottom: var(--space-2);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.legal p + p,
+.legal ul + p,
+.legal p + ul { margin-top: var(--space-2); }
+
+.legal ul { margin: 0; padding-left: 1.25em; }
+.legal li + li { margin-top: 6px; }
+.legal strong { font-weight: 600; }
+.legal a { overflow-wrap: anywhere; }
 
 /* — narrower sheets — */
 

@@ -9,3 +9,9 @@ permalink: pretty
 # Android"; fill one in and its button appears instead.
 app_store_url: ""
 play_store_url: ""
+
+# Used by the Terms and Privacy pages. Replace these before publishing.
+legal_name: "[legal name of the person or company]"
+legal_email: "[contact email]"
+legal_address: "[postal address]"
+legal_jurisdiction: "[country or state]"

@@ -1,0 +1,140 @@
+---
+layout: default
+title: Privacy Policy · Blurbs
+description: What Blurbs collects, why, who sees it, and how to delete it.
+---
+
+{% comment %}
+  DRAFT. Lines marked CONFIRM below describe how the app is assumed to work. Check each
+  against the app before publishing. These comments do not appear in the built page.
+{% endcomment %}
+
+<header class="sheet masthead">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Blurbs home">Blurbs<span>.</span></a>
+    <a href="{{ '/terms/' | relative_url }}">Terms</a>
+  </nav>
+  <div class="dateline rail">
+    <span>Books · Music · Film</span>
+    <span>Fifty words at most</span>
+  </div>
+</header>
+
+<main class="sheet legal">
+  <h1>Privacy Policy</h1>
+  <p class="rail">Last updated 7 November 2026</p>
+
+  <p class="lede">Blurbs is a place to post short public reviews, so most of what you write is meant to be seen. This policy explains what we collect, why, who receives it, and how you can get it removed.</p>
+
+  <section>
+    <h2>Who we are</h2>
+    <p>Blurbs is run by {{ site.legal_name }} (“we”, “us”). This policy covers the Blurbs mobile apps and the website at www.blurbs-app.com. We are responsible for your personal data, and you can reach us at <a href="mailto:{{ site.legal_email }}">{{ site.legal_email }}</a>.</p>
+  </section>
+
+  <section>
+    <h2>What we collect</h2>
+    {% comment %}CONFIRM: this list matches the fields the app really stores, including profile fields.{% endcomment %}
+    <ul>
+      <li><strong>Account details.</strong> Your email address, a password (stored in hashed form), and your username or display name.</li>
+      <li><strong>What you post.</strong> Your blurbs and the books, albums and films they are about.</li>
+      <li><strong>Your activity.</strong> Who you follow, who follows you, and the blurbs you like.</li>
+      <li><strong>Searches.</strong> What you type when looking for a title, and any barcode you scan.</li>
+      <li><strong>Technical data.</strong> IP address, device and app information, and server logs, which we use to run and protect the service.</li>
+      <li><strong>Messages to us.</strong> Anything you send when you contact us or report content.</li>
+    </ul>
+    {% comment %}CONFIRM: barcode images are read on the device and never uploaded or stored.{% endcomment %}
+    <p>The camera is used only when you choose to scan a barcode. We read the number from the barcode and don’t keep the image.</p>
+    <p>We don’t ask for sensitive information such as health data or government ID. Please don’t include it, or anyone else’s private details, in a blurb.</p>
+  </section>
+
+  <section>
+    <h2>How we use it</h2>
+    <p>We use your data for the following purposes. The reason the law lets us do so is shown in brackets, which matters mainly if you live in the UK or EEA.</p>
+    <ul>
+      <li>To create your account, publish your blurbs and show you what people you follow have posted (performing our contract with you).</li>
+      <li>To send confirmation emails, password resets and important service notices (performing our contract with you).</li>
+      <li>To find the titles you search for (performing our contract with you).</li>
+      <li>To keep Blurbs safe, review reports, enforce our <a href="{{ '/terms/' | relative_url }}">Terms</a>, and fix problems (our legitimate interest in running a safe, working service).</li>
+      <li>To meet legal obligations and respond to lawful requests (legal obligation).</li>
+    </ul>
+    {% comment %}CONFIRM: no ads, no data sales, no marketing email. Add any analytics or crash reporting tool to this policy.{% endcomment %}
+    <p>We don’t sell your personal data, show advertising, or send marketing email.</p>
+  </section>
+
+  <section>
+    <h2>What other people can see</h2>
+    {% comment %}CONFIRM: what is visible to signed-out people, and whether any private accounts exist.{% endcomment %}
+    <p>Your username, your blurbs, your likes and who you follow are public. Anyone using Blurbs can see them, and they can be copied or shared outside it. Your email address and password are never shown to other people.</p>
+  </section>
+
+  <section>
+    <h2>Who we share it with</h2>
+    <p>We share data only as needed to run Blurbs:</p>
+    {% comment %}CONFIRM: this is the complete list of services. Add email delivery, analytics, push notification or crash reporting providers.{% endcomment %}
+    <ul>
+      <li><strong>Supabase</strong> hosts our database and handles sign-in, so it stores your account details and content on our behalf.</li>
+      <li><strong>Open Library</strong> (books), <strong>Spotify</strong> (albums) and <strong>TMDB</strong> (films) receive your search terms and supply the title information and artwork we show. Your IP address may also reach them. We don’t send them your email address.</li>
+      <li><strong>Apple and Google</strong> distribute the apps and handle downloads under their own privacy policies.</li>
+      <li><strong>GitHub Pages and Google Fonts</strong> serve this website, and receive your IP address when you visit it.</li>
+      <li><strong>Authorities or others</strong> if the law requires it, or if needed to protect people’s safety or our legal rights.</li>
+      <li><strong>A new owner</strong> if Blurbs is sold or merged. We’d tell you first, and this policy would continue to apply until you were told otherwise.</li>
+    </ul>
+    <p>We expect service providers that handle personal data for us to protect it to a standard at least equal to this policy and to use it only to provide their service.</p>
+    {% comment %}CONFIRM: the app never asks people to log in with Spotify. If it does, describe the data received, the disconnect option, and deletion within five days.{% endcomment %}
+    <p>You don’t need a Spotify account to use Blurbs, and we don’t receive any data from your Spotify account. Spotify is a third-party beneficiary of this policy and may enforce it directly.</p>
+  </section>
+
+  <section>
+    <h2>Cookies and similar technology</h2>
+    {% comment %}CONFIRM: the app stores only a session token on the device and has no ad or tracking SDKs. The website statement was checked against this repo.{% endcomment %}
+    <p>This website doesn’t set cookies of its own or use analytics. Google Fonts and GitHub Pages receive standard request information, as described above, and we don’t allow third parties to place cookies here to track your browsing. The app keeps a sign-in token on your device so you stay logged in; logging out removes it. You can also manage cookies in your browser settings.</p>
+  </section>
+
+  <section>
+    <h2>How long we keep it</h2>
+    {% comment %}CONFIRM: in-app deletion exists (Apple requires it) and these time limits are achievable, including Supabase backups.{% endcomment %}
+    <p>We keep your data while your account is open. You can edit or delete a blurb at any time, and you can delete your account in the app’s settings or by emailing us. When you delete your account, we remove your account details and blurbs within 30 days. Copies in backups are overwritten within 90 days.</p>
+    <p>We may keep limited records for longer if we need them to meet a legal duty, resolve a dispute or deal with abuse. We can’t remove copies other people made of a public blurb.</p>
+  </section>
+
+  <section>
+    <h2>Your rights</h2>
+    <p>Depending on where you live, you may have the right to:</p>
+    <ul>
+      <li>get a copy of your data, including in a portable format;</li>
+      <li>correct data that is wrong;</li>
+      <li>have your data deleted;</li>
+      <li>object to, or ask us to limit, how we use it;</li>
+      <li>withdraw consent, where we rely on it;</li>
+      <li>complain to your local data protection authority.</li>
+    </ul>
+    <p>To use any of these rights, email <a href="mailto:{{ site.legal_email }}">{{ site.legal_email }}</a>. We’ll reply within 30 days and won’t treat you differently for asking. We may need to confirm the request is really from you.</p>
+  </section>
+
+  <section>
+    <h2>Security and international transfers</h2>
+    {% comment %}CONFIRM: the Supabase project region, and that transfer safeguards are in place (for example Supabase's data processing agreement).{% endcomment %}
+    <p>We use encrypted connections, hashed passwords and access controls to protect your data, but no service can promise perfect security. Our providers may process data outside your country, including in the United States. Where the law requires it, we rely on safeguards such as standard contractual clauses.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>Blurbs is for people aged 16 and over. We don’t knowingly collect data from anyone younger. If you think a child has given us their data, email us and we’ll delete it.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy, we’ll update the date at the top. If a change is significant, we’ll also tell you in the app or by email before it takes effect.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions or requests about your data: <a href="mailto:{{ site.legal_email }}">{{ site.legal_email }}</a>, or write to {{ site.legal_name }}, {{ site.legal_address }}.</p>
+  </section>
+</main>
+
+<footer class="sheet footer">
+  <span class="brand">Blurbs<span>.</span></span>
+  <em>Big opinions. Few words.</em>
+  <span class="footer-links"><a href="{{ '/terms/' | relative_url }}">Terms</a><a href="{{ '/privacy/' | relative_url }}">Privacy</a></span>
+</footer>
