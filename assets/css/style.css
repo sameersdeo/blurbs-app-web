@@ -224,10 +224,6 @@ section { scroll-margin-top: var(--space-6); }
 /* — hero — */
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: var(--space-8);
-  align-items: start;
   padding-block: var(--space-8) calc(var(--section) * 0.8);
 }
 
@@ -748,11 +744,6 @@ h1.logo {
 
 @media (max-width: 1000px) {
   :root { --section: 90px; --gutter: 24px; }
-
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-    gap: calc(var(--space-8) * 1.5);
-  }
 
   h1.logo { font-size: clamp(76px, 23vw, 200px); }
 

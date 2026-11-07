@@ -9,7 +9,6 @@ description: Short reviews of what you read, play and watch. No stars, no scores
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Blurbs home">Blurbs<span>.</span></a>
     <a href="#how">How it works</a>
     <a href="#try">Try it</a>
-    <a href="#read">Read a few</a>
   </nav>
   <div class="dateline rail">
     <span>Books · Music · Film</span>
@@ -29,36 +28,6 @@ description: Short reviews of what you read, play and watch. No stars, no scores
         <a class="btn btn-secondary" href="#how">How it works</a>
       </p>
     </div>
-
-    <figure class="phone" role="img" aria-label="The Blurbs feed on a phone: a trending strip of covers, then short reviews of a novel, an album and a film.">
-      <div class="screen">
-        <div class="feed-head">
-          <span class="rail js-dateline"></span>
-          <span class="feed-title">Blurbs<span>.</span></span>
-        </div>
-        <span class="rail feed-rail">Trending</span>
-        <div class="trending">
-          {% for b in site.data.blurbs %}
-          <div>
-            <span class="cover cover-{{ b.medium }}">{{ b.mono }}</span>
-            <span class="trending-name">{{ b.title }}</span>
-          </div>
-          {% endfor %}
-        </div>
-        <div class="feed">
-          {% assign feed = site.data.blurbs | where: "phone", true %}
-          {% for b in feed %}{% include blurb.html b=b %}{% endfor %}
-        </div>
-        <div class="tabbar">
-          <div class="tabs">
-            <span class="on"><svg class="ph"><use href="#ph-house"/></svg></span>
-            <span><svg class="ph"><use href="#ph-magnifying-glass"/></svg></span>
-            <span><svg class="ph"><use href="#ph-user-circle"/></svg></span>
-          </div>
-          <span class="write"><svg class="ph"><use href="#ph-plus"/></svg></span>
-        </div>
-      </div>
-    </figure>
   </section>
 
   <section class="sheet how" id="how">
@@ -101,22 +70,6 @@ description: Short reviews of what you read, play and watch. No stars, no scores
         <span class="bar"><span id="bar"></span></span>
       </div>
       <p class="visually-hidden" id="limit" role="status"></p>
-    </div>
-  </section>
-
-  <section class="sheet read" id="read">
-    <p class="rail">Sample blurbs, written for show</p>
-    <h2>Read a few.</h2>
-    <div class="columns">
-      {% assign mediums = "book:book-open:Books,music:vinyl-record:Music,movie:film-slate:Film" | split: "," %}
-      {% for m in mediums %}
-      {% assign parts = m | split: ":" %}
-      <div class="column">
-        <h3 class="rail column-head"><svg class="ph" aria-hidden="true"><use href="#ph-{{ parts[1] }}"/></svg>{{ parts[2] }}</h3>
-        {% assign group = site.data.blurbs | where: "medium", parts[0] %}
-        {% for b in group %}{% include blurb.html b=b %}{% endfor %}
-      </div>
-      {% endfor %}
     </div>
   </section>
 
